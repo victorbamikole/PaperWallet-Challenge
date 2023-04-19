@@ -4,8 +4,6 @@ import ImagePicker from "../components/ImagePicker";
 import { ImagesContext } from "../context/ImagesContext";
 
 const TakePictureScreen = () => {
-  const inmageCtx = useContext(ImagesContext);
-  const [imageUiris, setImageUris] = useState([]);
   return (
     <View style={styles.container}>
       <ImagePicker />
