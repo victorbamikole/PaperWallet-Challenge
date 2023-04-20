@@ -1,17 +1,17 @@
 import { StyleSheet, Text } from "react-native";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useContext } from "react";
 import ImagesList from "../components/ImagesList";
-import payLoadItems from "../data/payLoad";
 import { ImagesContext } from "../context/ImagesContext";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const GalleryScreen = () => {
   const imagesCtx = useContext(ImagesContext);
-  const [images, setImages] = useState([]);
   const imagesUris = imagesCtx.uris;
-  let imagesGrid = <Text style={styles.text}>No Images Taken Yet</Text>;
+  const deviceUris = imagesCtx.deviceUris;
 
-  return <ImagesList items={imagesUris} />;
+  useEffect(() => {
+    const deviceUris = imagesCtx.getImages();
+  }, [deviceUris]);
+  return <ImagesList items={deviceUris} />;
 };
 
 export default GalleryScreen;

@@ -1,8 +1,5 @@
 import { StyleSheet, Text, View, FlatList, Image } from "react-native";
 import React from "react";
-import ImageItem from "./ImageItem";
-import { IMAGESDATA } from "../data/dummy-data";
-import payLoadItems from "../data/payLoad";
 import ImageGridItem from "./ImageGridItem";
 import { GlobalStyles } from "../constants/styles";
 
